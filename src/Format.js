@@ -61,7 +61,7 @@ export default function Format({ datas, error, parentCollapse, setParentCollapse
                 <div>&#123;
                 </div>
                 :
-                ' Your formated JSON output'
+                ' Your formatted JSON output'
             }
             {
                 error && <p className='text-red-500 font-semibold'>Syntax error: please enter a valid json formate data</p>
