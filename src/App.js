@@ -7,7 +7,6 @@ function App() {
   const [error, setError] = useState(false)
   const [parentCollapse, setParentCollapse] = useState()
 
-
   function isValidJSONString(str) {
     try {
       JSON.parse(str);
@@ -16,24 +15,29 @@ function App() {
     }
     return true;
   }
-  function callbackFunction() {
+
+
+  
+   function callbackFunction() {
 
     if (isValidJSONString(data)) {
-       let s = data.replaceAll('.', '')
-       console.log(s)
+
       setJsonData(JSON.parse(data))
       console.log(Object.keys(JSON.parse(data)).length)
       let arr = []
       for (var i = 0; i <= Object.keys(JSON.parse(data)).length; i++) {
         arr.push({
           key: i,
-          watch: false,
+          watch: true,
         });
       }
       setParentCollapse(arr)
       setError(false)
+
+
     } else {
       setError(true)
+      setJsonData('')
       console.log(error)
     }
   }
